@@ -17,11 +17,11 @@ public class Destinatario {
     @Column(name = "nome_destinatario",nullable = false,length = 100)
     private String nomeDestinatario;
 
-    @Column(name="cnpj_destinatario",nullable = false, length=14)
-    private String CnpjDestinatario;
+    @Column(name="cnpj_destinatario",nullable = false, length=14, unique = true)
+    private String cnpjDestinatario;
 
     @Column(name="cep_destinatario",nullable=false,length = 8)
-    private Integer CepDestinatario;
+    private String cepDestinatario;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable=false)
@@ -68,19 +68,19 @@ public class Destinatario {
     }
 
     public String getCnpjDestinatario() {
-        return CnpjDestinatario;
+        return cnpjDestinatario;
     }
 
     public void setCnpjDestinatario(String cnpjDestinatario) {
-        CnpjDestinatario = cnpjDestinatario;
+        this.cnpjDestinatario = cnpjDestinatario;
     }
 
-    public Integer getCepDestinatario() {
-        return CepDestinatario;
+    public String getCepDestinatario() {
+        return cepDestinatario;
     }
 
-    public void setCepDestinatario(Integer cepDestinatario) {
-        CepDestinatario = cepDestinatario;
+    public void setCepDestinatario(String cepDestinatario) {
+        this.cepDestinatario = cepDestinatario;
     }
 
     public Status getStatus() {
@@ -97,14 +97,6 @@ public class Destinatario {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
-    }
-
-    public Padrao getPadrao() {
-        return padrao;
-    }
-
-    public void setPadrao(Padrao padrao) {
-        this.padrao = padrao;
     }
 
     public LocalDateTime getDataCriacao() {

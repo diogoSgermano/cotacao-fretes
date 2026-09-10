@@ -2,8 +2,6 @@ package cotacao_frete.backend.entity;
 
 
 import jakarta.persistence.*;
-import jdk.jshell.Snippet;
-
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -18,11 +16,11 @@ public class Remetente {
     @Column(name = "nome_remetente",nullable = false,length = 100)
     private String nomeRemetente;
 
-    @Column(name="cnpj_remetente",nullable = false, length=14)
-    private String CnpjRemetente;
+    @Column(name="cnpj_remetente",nullable = false, length=14, unique = true)
+    private String cnpjRemetente;
 
     @Column(name="cep_remetente",nullable=false,length = 8)
-    private Integer CepRemetente;
+    private String cepRemetente;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable=false)
@@ -56,60 +54,12 @@ public class Remetente {
 
     Remetente(){}
 
-    public Long getIdRemetente() {
-        return idRemetente;
+    public LocalDateTime getDataModificacao() {
+        return dataModificacao;
     }
 
-    public void setIdRemetente(Long idRemetente) {
-        this.idRemetente = idRemetente;
-    }
-
-    public String getNomeRemetente() {
-        return nomeRemetente;
-    }
-
-    public void setNomeRemetente(String nomeRemetente) {
-        this.nomeRemetente = nomeRemetente;
-    }
-
-    public String getCnpjRemetente() {
-        return CnpjRemetente;
-    }
-
-    public void setCnpjRemetente(String cnpjRemetente) {
-        CnpjRemetente = cnpjRemetente;
-    }
-
-    public Integer getCepRemetente() {
-        return CepRemetente;
-    }
-
-    public void setCepRemetente(Integer cepRemetente) {
-        CepRemetente = cepRemetente;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
-    public Padrao getPadrao() {
-        return padrao;
-    }
-
-    public void setPadrao(Padrao padrao) {
-        this.padrao = padrao;
+    public void setDataModificacao(LocalDateTime dataModificacao) {
+        this.dataModificacao = dataModificacao;
     }
 
     public LocalDateTime getDataCriacao() {
@@ -120,12 +70,60 @@ public class Remetente {
         this.dataCriacao = dataCriacao;
     }
 
-    public LocalDateTime getDataModificacao() {
-        return dataModificacao;
+    public Padrao getPadrao() {
+        return padrao;
     }
 
-    public void setDataModificacao(LocalDateTime dataModificacao) {
-        this.dataModificacao = dataModificacao;
+    public void setPadrao(Padrao padrao) {
+        this.padrao = padrao;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public String getCepRemetente() {
+        return cepRemetente;
+    }
+
+    public void setCepRemetente(String cepRemetente) {
+        this.cepRemetente = cepRemetente;
+    }
+
+    public String getCnpjRemetente() {
+        return cnpjRemetente;
+    }
+
+    public void setCnpjRemetente(String cnpjRemetente) {
+        this.cnpjRemetente = cnpjRemetente;
+    }
+
+    public String getNomeRemetente() {
+        return nomeRemetente;
+    }
+
+    public void setNomeRemetente(String nomeRemetente) {
+        this.nomeRemetente = nomeRemetente;
+    }
+
+    public Long getIdRemetente() {
+        return idRemetente;
+    }
+
+    public void setIdRemetente(Long idRemetente) {
+        this.idRemetente = idRemetente;
     }
 
     @Override
