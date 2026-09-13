@@ -59,6 +59,20 @@ public class Formulario {
     public Formulario() {
     }
 
+    public Formulario(Long idFormulario, Remetente remetente, Destinatario destinatario, BigDecimal valorNf, BigDecimal peso, Integer volume, String tipoMaterial, String medidas, TipoDeFrete tipoDeFrete, String tipoEmbalagem, LocalDateTime dataCriacao) {
+        this.idFormulario = idFormulario;
+        this.remetente = remetente;
+        this.destinatario = destinatario;
+        this.valorNf = valorNf;
+        this.peso = peso;
+        this.volume = volume;
+        this.tipoMaterial = tipoMaterial;
+        this.medidas = medidas;
+        this.tipoDeFrete = tipoDeFrete;
+        this.tipoEmbalagem = tipoEmbalagem;
+        this.dataCriacao = dataCriacao;
+    }
+
     public Long getIdFormulario() {
         return idFormulario;
     }

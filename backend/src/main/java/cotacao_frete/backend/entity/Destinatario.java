@@ -51,6 +51,17 @@ public class Destinatario {
 
     Destinatario(){}
 
+    public Destinatario(Long idDestinatario, String nomeDestinatario, String cnpjDestinatario, String cepDestinatario, Status status, String endereco, LocalDateTime dataCriacao, LocalDateTime dataModificacao) {
+        this.idDestinatario = idDestinatario;
+        this.nomeDestinatario = nomeDestinatario;
+        this.cnpjDestinatario = cnpjDestinatario;
+        this.cepDestinatario = cepDestinatario;
+        this.status = status;
+        this.endereco = endereco;
+        this.dataCriacao = dataCriacao;
+        this.dataModificacao = dataModificacao;
+    }
+
     public Long getIdDestinatario() {
         return idDestinatario;
     }

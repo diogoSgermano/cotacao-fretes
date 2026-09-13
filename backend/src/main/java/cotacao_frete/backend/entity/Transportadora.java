@@ -49,6 +49,19 @@ public class Transportadora {
         dataModificacao = LocalDateTime.now();
     }
 
+    Transportadora(){}
+
+    public Transportadora(Long idTransportadora, String nomeTransportadora, String cnpjTransportadora, String cepTransportadora, Modal modal, Status status, LocalDateTime dataCriacao, LocalDateTime dataModificacao) {
+        this.idTransportadora = idTransportadora;
+        this.nomeTransportadora = nomeTransportadora;
+        this.cnpjTransportadora = cnpjTransportadora;
+        this.cepTransportadora = cepTransportadora;
+        this.modal = modal;
+        this.status = status;
+        this.dataCriacao = dataCriacao;
+        this.dataModificacao = dataModificacao;
+    }
+
     public Long getIdTransportadora() {
         return idTransportadora;
     }

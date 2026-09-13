@@ -54,6 +54,18 @@ public class Remetente {
 
     Remetente(){}
 
+    public Remetente(Long idRemetente, String nomeRemetente, String cnpjRemetente, String cepRemetente, Status status, String endereco, Padrao padrao, LocalDateTime dataCriacao, LocalDateTime dataModificacao) {
+        this.idRemetente = idRemetente;
+        this.nomeRemetente = nomeRemetente;
+        this.cnpjRemetente = cnpjRemetente;
+        this.cepRemetente = cepRemetente;
+        this.status = status;
+        this.endereco = endereco;
+        this.padrao = padrao;
+        this.dataCriacao = dataCriacao;
+        this.dataModificacao = dataModificacao;
+    }
+
     public LocalDateTime getDataModificacao() {
         return dataModificacao;
     }
